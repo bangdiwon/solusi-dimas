@@ -10,7 +10,7 @@ body {
   font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
   background-color: #f8f9fa;
-  overflow-x: hidden; /* Mencegah geser kanan-kiri */
+  overflow-x: hidden;
 }
 
 /* --- NAVBAR --- */
@@ -23,9 +23,14 @@ body {
   color: var(--primary-color) !important;
 }
 
-/* --- HERO SECTION --- */
-.carousel-item {
-  height: 85vh; /* Tinggi Banner */
+/* =========================================
+   BAGIAN INI YANG DIPERBAIKI TOTAL
+========================================= */
+
+/* --- 1. HERO SECTION (BANNER UTAMA ATAS) --- */
+/* Kita kunci 85vh HANYA untuk #heroCarousel agar banner atas tetap gagah */
+#heroCarousel .carousel-item {
+  height: 85vh;
   background-size: cover;
   background-position: center;
 }
@@ -37,7 +42,39 @@ body {
   justify-content: center;
 }
 
-/* --- DOMAIN SECTION (POSISI BARU) --- */
+/* --- 2. SLIDER PROJECT & SEO (PERBAIKAN RUANG PUTIH) --- */
+/* PENTING: Paksa container slider ini agar tingginya AUTO (mengecil ikut gambar) */
+#projectCarousel .carousel-item,
+#seoCarousel .carousel-item {
+  height: auto !important; /* KUNCI: Jangan pakai 85vh */
+  min-height: 0 !important;
+  background: transparent !important; /* Hapus background putih jika ada */
+  padding-bottom: 0 !important;
+}
+
+/* Atur gambarnya agar pas */
+.slider-img {
+  width: 100%;
+  height: auto !important; /* Tinggi proporsional */
+  object-fit: contain !important; /* Gambar utuh tidak terpotong */
+  border-radius: 15px;
+  display: block; /* Menghapus celah baris bawaan browser */
+  margin: 0 auto;
+}
+
+/* Khusus di HP, kita pastikan lagi tidak ada shadow/jarak aneh */
+@media (max-width: 768px) {
+  #projectCarousel,
+  #seoCarousel {
+    box-shadow: none !important;
+    margin-bottom: 30px; /* Beri sedikit jarak wajar ke elemen bawahnya */
+  }
+}
+/* =========================================
+   AKHIR PERBAIKAN
+========================================= */
+
+/* --- DOMAIN SECTION --- */
 .domain-section {
   position: relative;
   z-index: 10;
@@ -51,22 +88,6 @@ body {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
-.slider-img {
-  width: 100%;
-  height: auto; /* SEBELUMNYA 400px. Diganti auto biar tinggi mengikuti gambar */
-  min-height: 200px; /* Minimal tinggi biar gak hilang kalau gambar error */
-  object-fit: contain; /* Menampilkan seluruh gambar tanpa terpotong */
-  border-radius: 15px;
-  display: block; /* Pastikan tidak ada celah baris */
-}
-
-/* Responsif untuk HP */
-@media (max-width: 768px) {
-  .slider-img {
-    height: auto; /* Di HP juga auto */
-    min-height: 150px;
-  }
-}
 .carousel-caption-custom {
   background: rgba(0, 0, 0, 0.7);
   padding: 15px;
