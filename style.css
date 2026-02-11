@@ -51,17 +51,20 @@ body {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
-/* --- SLIDER GAMBAR (PROJECT & SEO) --- */
 .slider-img {
   width: 100%;
-  height: 400px; /* Tinggi gambar di Desktop */
-  object-fit: cover; /* Agar gambar tidak gepeng */
+  height: auto; /* SEBELUMNYA 400px. Diganti auto biar tinggi mengikuti gambar */
+  min-height: 200px; /* Minimal tinggi biar gak hilang kalau gambar error */
+  object-fit: contain; /* Menampilkan seluruh gambar tanpa terpotong */
   border-radius: 15px;
+  display: block; /* Pastikan tidak ada celah baris */
 }
+
 /* Responsif untuk HP */
 @media (max-width: 768px) {
   .slider-img {
-    height: 250px; /* Tinggi gambar di HP */
+    height: auto; /* Di HP juga auto */
+    min-height: 150px;
   }
 }
 .carousel-caption-custom {
