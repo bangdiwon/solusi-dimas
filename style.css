@@ -1,0 +1,280 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap");
+
+:root {
+  --primary-color: #0d6efd;
+  --orange-accent: #fd7e14;
+  --dark-bg: #000000;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+  background-color: #f8f9fa;
+  overflow-x: hidden; /* Mencegah geser kanan-kiri */
+}
+
+/* --- NAVBAR --- */
+.navbar-brand {
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+.nav-link:hover,
+.nav-link.active {
+  color: var(--primary-color) !important;
+}
+
+/* --- HERO SECTION --- */
+.carousel-item {
+  height: 85vh; /* Tinggi Banner */
+  background-size: cover;
+  background-position: center;
+}
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.6);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- DOMAIN SECTION (POSISI BARU) --- */
+.domain-section {
+  position: relative;
+  z-index: 10;
+  padding: 60px 0;
+  background-color: #fff;
+  border-top: 1px solid #eee;
+}
+.domain-card {
+  border: 1px solid #eee;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* --- SLIDER GAMBAR (PROJECT & SEO) --- */
+.slider-img {
+  width: 100%;
+  height: 400px; /* Tinggi gambar di Desktop */
+  object-fit: cover; /* Agar gambar tidak gepeng */
+  border-radius: 15px;
+}
+/* Responsif untuk HP */
+@media (max-width: 768px) {
+  .slider-img {
+    height: 250px; /* Tinggi gambar di HP */
+  }
+}
+.carousel-caption-custom {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 15px;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+/* --- ABOUT SECTION --- */
+.about-section {
+  background-color: #fff;
+  padding: 80px 0;
+}
+.section-subtitle {
+  font-weight: 700;
+  margin-top: 30px;
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+/* --- FEATURES GRID --- */
+.bg-gradient-blue {
+  background: linear-gradient(180deg, #a1c4fd 0%, #c2e9fb 100%);
+}
+.feature-box {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  height: 100%;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  border: none;
+}
+.feature-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+.icon-square {
+  width: 50px;
+  height: 50px;
+  background-color: var(--orange-accent);
+  color: white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* --- PRICING CARDS V2 --- */
+.pricing-card-v2 {
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  border-radius: 16px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  height: 100%;
+  position: relative;
+}
+.pricing-card-v2:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  border-color: var(--primary-color);
+}
+.card-accent {
+  height: 6px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.accent-blue {
+  background: #0d6efd;
+}
+.accent-warning {
+  background: #ffc107;
+}
+.accent-success {
+  background: #198754;
+}
+.pricing-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin: 0 auto 20px auto;
+}
+.bg-light-blue {
+  background: #e7f1ff;
+  color: #0d6efd;
+}
+.bg-light-warning {
+  background: #fff3cd;
+  color: #ffc107;
+}
+.bg-light-success {
+  background: #d1e7dd;
+  color: #198754;
+}
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  text-align: left;
+}
+.feature-list li {
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  color: #6c757d;
+  display: flex;
+  align-items: start;
+}
+.feature-list li i {
+  color: #0d6efd;
+  margin-right: 10px;
+  margin-top: 4px;
+}
+
+/* --- PORTFOLIO SECTION --- */
+.portfolio-section {
+  background: linear-gradient(180deg, #89c4f4 0%, #48c6ef 100%);
+  color: white;
+  padding: 100px 0;
+  text-align: center;
+}
+.portfolio-text {
+  max-width: 800px;
+  margin: 0 auto 30px auto;
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+.btn-black {
+  background-color: #000;
+  color: #fff;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+  border: 2px solid #000;
+}
+.btn-black:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/* --- CONTACT SECTION --- */
+.bg-soft-blue {
+  background-color: #f0f8ff;
+}
+.btn-info {
+  background-color: #00bcd4;
+  border: none;
+  color: white;
+}
+.btn-info:hover {
+  background-color: #00acc1;
+  color: white;
+}
+
+/* --- FOOTER CUSTOM --- */
+.footer-custom {
+  background-color: var(--dark-bg);
+  color: #fff;
+  padding: 80px 0 30px 0;
+  font-size: 0.9rem;
+}
+.footer-title {
+  font-weight: 800;
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  color: #fff;
+}
+.footer-title::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  background-color: var(--orange-accent);
+  margin-top: 10px;
+}
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+.footer-links li {
+  margin-bottom: 12px;
+}
+.footer-links a {
+  color: #b0b0b0;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.footer-links a:hover {
+  color: var(--orange-accent);
+  padding-left: 5px;
+}
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  color: #b0b0b0;
+}
+.contact-item i {
+  width: 25px;
+  margin-right: 10px;
+  font-size: 1.1rem;
+}
